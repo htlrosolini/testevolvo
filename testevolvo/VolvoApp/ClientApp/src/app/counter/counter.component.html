@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+
+<form>
+  <label>Id:</label>
+  <input type="text" name="id" id="id" class="form-control" disabled [(ngModel)]="currentTruck.id" />
+
+  <label>Nome:</label>
+  <input type="text" name="name" id="name" class="form-control" [(ngModel)]="currentTruck.name" />
+
+  <label>Modelo:</label>
+  <select class="form-control" id="modelo" name="modelo" [(ngModel)]="currentTruck.modelo" required>
+    <option *ngFor="let mod of models" [value]="mod">{{mod}}</option>
+  </select>
+
+  <label>Ano Fabricação:</label>
+  <input type="text" name="anoFab" id="anoFab" class="form-control" disabled [(ngModel)]="currentTruck.anoFab" value="2022" />
+
+  <label>Ano Modelo:</label>
+  <select class="form-control" id="anoMod" name="anoMod" required [(ngModel)]="currentTruck.anoMod">
+    <option *ngFor="let year of modYear" [value]="year">{{year}}</option>
+  </select>
+
+  <button id="save" name="save" class="btn btn-primary">Salvar</button>
+</form>
+
+

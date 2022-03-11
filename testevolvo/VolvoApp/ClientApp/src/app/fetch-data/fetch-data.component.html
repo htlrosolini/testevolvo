@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Caminhões</h1>
+
+<p *ngIf="!caminhoes"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="caminhoes">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Modelo</th>
+      <th>Ano Fabricação</th>
+      <th>Ano Modelo</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let caminhao of caminhoes">
+      <td>{{ caminhao.id }}</td>
+      <td>{{ caminhao.name }}</td>
+      <td>{{ caminhao.modelo }}</td>
+      <td>{{ caminhao.anoFab }}</td>
+      <td>{{ caminhao.anoMod }}</td>
+      <td><button class="btn btn-primary" (click)="editTruck(caminhao.id)">Editar</button></td>
+      <td><button class="btn btn-danger" (click)="deleteTruck(caminhao.id)">Excluir</button></td>
+    </tr>
+  </tbody>
+</table>
